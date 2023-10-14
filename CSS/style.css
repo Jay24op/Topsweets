@@ -1,0 +1,16 @@
+:root {
+    --orange: #f88c5c;
+    --blue: #31acf1;
+    --black: #3d3939;
+    --pink: #de256b;
+    --brown: #cd957b;
+}
+
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+/* typography */
+html {
+    font-size: 62.5%;
+}
