@@ -6,26 +6,40 @@
     <!-- css -->
     <link rel="stylesheet" href="/CSS/style.css" />
     <title>TopSweets_landingpage</title>
+    <!-- js -->
+    <script
+      src="https://kit.fontawesome.com/fedc089aeb.js"
+      crossorigin="anonymous"
+      defer
+    ></script>
   </head>
   <body>
+    <!-- header -->
     <header class="header" id="home">
-      <nav class="nav">
-        <div class="logoContent">
-          <a class="logo" href="#"
-            ><img src="/Images/TSUB_logo.jpg" alt="logo"
-          /></a>
-          <h1 class="logoName">Top Sweets | Unique Bakery</h1>
-        </div>
+      <!-- logo -->
+      <div class="logoContent">
+        <a href="#">
+          <img src="/Images/TSUB_logo.jpg" alt="logo" />
+        </a>
+      </div>
+      <h1 class="logoName">Top Sweets | Unique Bakery</h1>
 
-        <ul class="list">
-          <li><a href="#home">Home</a></li>
-          <li><a href="">About</a></li>
-          <li><a href="">Masterpieces</a></li>
-          <li><a href="">Services</a></li>
-          <li><a href="">Leave a Review</a></li>
-          <li><a href="">Settings</a></li>
-        </ul>
+      <!-- navagation-bar -->
+      <nav class="navbar">
+        <a href="#home">Home</a>
+        <a href="">About</a>
+        <a href="">Masterpieces</a>
+        <a href="">Services</a>
+        <a href="">Leave a Review</a>
+        <a href="">Settings</a>
       </nav>
+      <div class="icon">
+        <svg id="menu">
+          <use xlink:href="images/sprite.svg#menu"></use>
+        </svg>
+      </div>
     </header>
+
+    <script src="/Js/script.js"></script>
   </body>
 </html>

@@ -1,6 +1,6 @@
 /* background: url(qijin-xu.png) no-repeat center center scroll;
 }aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa */
-@import url();
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,600;1,400;1,700&display=swap');
 
 :root {
     --orange: #f88c5c;
@@ -8,21 +8,22 @@
     --black: #3d3939;
     --pink: #de256b;
     --brown: #cd957b;
+    -box-shadow: 0px 4px 4px rgba(0,0,0,0.25);
 }
 
 *, *::before, *::after {
     box-sizing: border-box;
-    list-style: none;
     margin: 0; padding: 0;
-    outline: none;
-    text-decoration: none;
+    outline: none; border: none;
+    text-decoration: none; text-transform: capitalize;
+    transition: .2s linear;
 }
 
 /* typography */
 html {
-    font-size: 62.5%;
-    font-family: 'Poppins', sans-serif;
+    font-size: 62.5%; font-family: 'Poppins', sans-serif;
     background:var(--brown);
+    overflow-x: hidden;
 }
 
 /* centering */
@@ -34,42 +35,81 @@ html {
 /* navigation */
 .header {
     background-color: #ebe6e6;
-    width: max-content;
-    padding: 0 .7rem;
-}
-.nav {
-    display: flex; flex-wrap: wrap;
-    align-items: center; justify-content: space-between;
-    padding: .25rem 3rem;
+    display: flex;  position: fixed;
+    align-items: center;
+    justify-content: space-between;
+    top: 0; right: 0; left: 0;
+    padding: .5rem 5% 0;
+    z-index: 99;
 }
 .logoContent {
-    transition: transform .5s; cursor: pointer;
+    cursor: pointer;
+    transition: transform .5s;
+}
+.logoContent img, .icon svg {
+    height: 10rem;
 }
 .logoContent:hover {
-    transform: scale(1.1)
-}
-.logo {
-    height: 15rem;
-}
-.logo img {
-    max-height: 15rem;
+    transform: scale(1.05)
 }
 .logoName {
-    font-size: 3rem; font-weight: 700; font-style: italic;
+    font-size: 2.5rem; font-weight: 700; 
+    font-style: italic; color: var(--black);
+}
+.navbar a {
+    font-size: 2rem; font-weight: bold;
+    color: var(--black);
+}
+.navbar a:hover {
+    border-bottom: .25rem solid var(--brown);
+}
+.icon svg {
+    fill: var(--black); cursor: pointer;
+    width: 5.5rem;
+    padding: .5rem;
+    transition: all .15s;
+}
+.icon svg:hover {
+    border: 2px solid var(--blue);
+    border-radius: 1rem;
+}
+.icon #menu {
+    display: none;
 }
 
-/* list  */
-.list {
-}
-.list li {
-    padding: 1rem;
-}
-.list li a {
-    font-size: 2.1rem; font-weight: 500;
-    color: var(--pink); padding-right: 1.5rem;
-}
-.list li a:hover {
-    color: var(--blue);
+/* media queries*/
+@media screen and (max-width:768px){
+    /* menu icon appearance */
+    .icon #menu {
+        display: inline-block;
+    }
+    /* navbar relocated off-screen */
+    .navbar {
+        position: absolute;
+        top: 100%;right: -100%;
+        width: 25rem; height: 65vh;
+        background-color: var(--blue);
+    }
+    /* navbar appears onclick */
+    .navbar.active {
+        right: 0;
+    }
+    /* navbar link display */
+    .navbar a {
+        display: block;
+        font-size: 2rem;
+        color: var(--black);
+        margin: 1.5rem;
+    }
 }
 
-/* you may have to redo to make it mobile first/ try to find a mobile previewer */
+/* @media screen and (max-width:1024px){
+    
+} */
+
+/* now: */
+/* fix links for laptop */
+/* find banner for hero */
+
+/* later: */
+/* fix name when resizing */
