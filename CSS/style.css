@@ -1,5 +1,3 @@
-/* background: url(qijin-xu.png) no-repeat center center scroll;
-}aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,600;1,400;1,700&display=swap');
 
 :root {
@@ -8,7 +6,8 @@
     --black: #3d3939;
     --pink: #de256b;
     --brown: #cd957b;
-    -box-shadow: 0px 4px 4px rgba(0,0,0,0.25);
+    --white: #ebe6e6;
+    --box-shadow: 0px 4px 4px rgba(0,0,0,0.25);
 }
 
 *, *::before, *::after {
@@ -25,16 +24,33 @@ html {
     background:var(--brown);
     overflow-x: hidden;
 }
+h1 {
+    font-size: 3rem; font-weight: 700; 
+    font-style: italic; color: var(--black);
+}
+h2 {
+    font-size: 2.5rem; font-weight: 600;
+}
+h3 {
+    font-size: 2rem; font-weight: 550;
+}
+P {
+    font-size: 1.4rem; font-weight: 300;
+}
 
 /* centering */
-.logoContent, .list {
+h3,
+.logoContent,
+.list,
+.heading,
+.card .card_img {
     display: flex;
     align-items: center; justify-content: center;
 }
 
 /* navigation */
 .header {
-    background-color: #ebe6e6;
+    background-color: var(--white);
     display: flex;  position: fixed;
     align-items: center;
     justify-content: space-between;
@@ -51,10 +67,6 @@ html {
 }
 .logoContent:hover {
     transform: scale(1.05)
-}
-.logoName {
-    font-size: 2.5rem; font-weight: 700; 
-    font-style: italic; color: var(--black);
 }
 .navbar a {
     font-size: 2rem; font-weight: bold;
@@ -75,6 +87,46 @@ html {
 }
 .icon #menu {
     display: none;
+}
+
+/* hero */
+.hero {
+    background: linear-gradient(45deg,transparent 34%, #31acf1 35%, #31acf1 40%, transparent 41%, transparent 59%, #31acf1  60%, #31acf1 65%, transparent 66%),
+        linear-gradient(135deg,transparent 34%, #31acf1 35%, #31acf1 40%, transparent 41%, transparent 59%, #31acf1  60%, #31acf1 65%, transparent 66%);
+        background-size: 3em 3em;
+        background-color:  #ebe6e6;
+        opacity: 1
+}
+/* product */
+.placeholder {
+    background-color: #fff;
+    width: 1rem; height: 11.01rem;
+}
+.product {
+    background-color: var(--blue); 
+    padding: 2.5rem 2rem;
+}
+.product .heading{
+    padding-bottom: 3rem;
+}
+.product .card {
+    background-color: #ebe6e6;
+    /* width: 50%; */
+    padding: 2rem;
+    border-radius: 5rem;
+}
+.card h2 {
+    padding-bottom: 1rem;
+}
+.card_img {
+    padding: 2rem;
+}
+.card_img img {
+    width: 100%;
+}
+.card p {
+    line-height: 1.25;
+    text-align: center; 
 }
 
 /* media queries*/
@@ -108,8 +160,7 @@ html {
 } */
 
 /* now: */
-/* fix links for laptop */
-/* find banner for hero */
+/*  */
 
 /* later: */
-/* fix name when resizing */
+/*  */
