@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,600;1,400;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,400;1,700&display=swap');
 
 :root {
     --orange: #f88c5c;
@@ -27,6 +27,7 @@ html {
 h1 {
     font-size: 3rem; font-weight: 700; 
     font-style: italic; color: var(--black);
+    line-height: 1.15;
 }
 h2 {
     font-size: 2.5rem; font-weight: 600;
@@ -68,9 +69,15 @@ h3,
 .logoContent:hover {
     transform: scale(1.05)
 }
+#short-name {
+    display: none;
+}
+#full-name {
+    text-align: center; padding-right: 1.5rem;
+}
 .navbar a {
-    font-size: 2rem; font-weight: bold;
-    color: var(--black);
+    font-size: 2rem; font-weight: 500;
+    color: var(--black); margin-right: 1rem;
 }
 .navbar a:hover {
     border-bottom: .25rem solid var(--brown);
@@ -91,26 +98,38 @@ h3,
 
 /* hero */
 .hero {
-    background: linear-gradient(45deg,transparent 34%, #31acf1 35%, #31acf1 40%, transparent 41%, transparent 59%, #31acf1  60%, #31acf1 65%, transparent 66%),
-        linear-gradient(135deg,transparent 34%, #31acf1 35%, #31acf1 40%, transparent 41%, transparent 59%, #31acf1  60%, #31acf1 65%, transparent 66%);
-        background-size: 3em 3em;
-        background-color:  #ebe6e6;
-        opacity: 1
+    display: flex;
+    align-items: center;
+    min-height: 90vh;
+    background: url(/Images/tsb_banner.png) var(--blue);
+    background-position: center center; background-size: cover;
+    text-align: center; 
+}
+.hero_content {
+    margin: 0 2rem;
+}
+.hero_content h2 {
+    margin-bottom: 7rem;
+    font-size: 5rem; font-weight: bold;
+}
+.hero_content p {
+    font-size: 2rem; font-weight: 500;
+    line-height: 3;
 }
 /* product */
-.placeholder {
-    background-color: #fff;
-    width: 1rem; height: 11.01rem;
-}
 .product {
-    background-color: var(--blue); 
+    
     padding: 2.5rem 2rem;
 }
 .product .heading{
     padding-bottom: 3rem;
 }
 .product .card {
-    background-color: #ebe6e6;
+    background: linear-gradient(45deg,transparent 34%, #31acf1 35%, #31acf1 40%, transparent 41%, transparent 59%, #31acf1  60%, #31acf1 65%, transparent 66%),
+        linear-gradient(135deg,transparent 34%, #31acf1 35%, #31acf1 40%, transparent 41%, transparent 59%, #31acf1  60%, #31acf1 65%, transparent 66%);
+        background-size: 3em 3em;
+        background-color:  #ebe6e6;
+        opacity: 1
     /* width: 50%; */
     padding: 2rem;
     border-radius: 5rem;
@@ -130,7 +149,19 @@ h3,
 }
 
 /* media queries*/
+
+/* full-name appearance */
+@media screen and (max-width:700px){
+    #short-name {
+        display: block;
+    }
+    #full-name {
+        display: none;
+    }
+}
+
 @media screen and (max-width:768px){
+    
     /* menu icon appearance */
     .icon #menu {
         display: inline-block;
@@ -155,9 +186,11 @@ h3,
     }
 }
 
-/* @media screen and (max-width:1024px){
-    
-} */
+@media screen and (min-width:768px){
+    .header {
+        padding: .2rem 1% 0;
+    }
+}
 
 /* now: */
 /*  */
