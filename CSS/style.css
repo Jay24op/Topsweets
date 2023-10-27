@@ -41,8 +41,6 @@ P {
 
 /* centering */
 h3,
-.logoContent,
-.list,
 .heading,
 .card .card_img {
     display: flex;
@@ -64,7 +62,7 @@ h3,
     transition: transform .5s;
 }
 .logoContent img, .icon svg {
-    height: 10rem;
+    height: 7.5rem;
 }
 .logoContent:hover {
     transform: scale(1.05)
@@ -73,7 +71,7 @@ h3,
     display: none;
 }
 #full-name {
-    text-align: center; padding-right: 1.5rem;
+    text-align: center;
 }
 .navbar a {
     font-size: 2rem; font-weight: 500;
@@ -106,7 +104,7 @@ h3,
     text-align: center; 
 }
 .hero_content {
-    margin: 10rem 2rem 0 2rem;
+    margin: 10rem 2rem;
 }
 .hero_content h2 {
     margin-bottom: 7rem;
@@ -173,7 +171,7 @@ h3,
         display: none;
     }
 }
-
+/* tablet */
 @media screen and (max-width:768px){
     
     /* menu icon appearance */
@@ -199,8 +197,12 @@ h3,
         margin: 1.5rem;
     }
 }
-
+/* large tablet */
 @media screen and (min-width:768px){
+    /* logo resize */
+    .logoContent img {
+        height: 10rem;
+    }
     .header {
         padding: .2rem 1% 0;
     }
@@ -209,6 +211,9 @@ h3,
     }
     .hero_content a {
         font-size: 3rem;
+    }
+    .hero_content p {
+        max-width: 97.5rem;
     }
 }
 
