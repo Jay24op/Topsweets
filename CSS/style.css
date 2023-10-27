@@ -106,7 +106,7 @@ h3,
     text-align: center; 
 }
 .hero_content {
-    margin: 0 2rem;
+    margin: 10rem 2rem 0 2rem;
 }
 .hero_content h2 {
     margin-bottom: 7rem;
@@ -115,6 +115,20 @@ h3,
 .hero_content p {
     font-size: 2rem; font-weight: 500;
     line-height: 3;
+}
+.hero_content button {
+    width: 30%; height: 5rem;
+    border-radius: 1rem;
+    margin-top: 5rem; cursor: pointer;
+    background-color: var(--orange);
+}
+.hero_content a {
+    font-size: 1.6rem; font-weight: bold;
+    color: var(--pink);
+}
+.hero_content button:hover {
+    box-shadow: .5rem .5rem 1rem var(--pink);
+    scale: 1.1;
 }
 /* product */
 .product {
@@ -189,6 +203,12 @@ h3,
 @media screen and (min-width:768px){
     .header {
         padding: .2rem 1% 0;
+    }
+    .hero_content button {
+        height: 7rem;
+    }
+    .hero_content a {
+        font-size: 3rem;
     }
 }
 
