@@ -42,6 +42,7 @@ P {
 /* centering */
 h3,
 .heading,
+.hero,
 .card .card_img {
     display: flex;
     align-items: center; justify-content: center;
@@ -51,9 +52,9 @@ h3,
 .header {
     background-color: var(--white);
     display: flex;  position: fixed;
-    align-items: center;
-    justify-content: space-between;
+    align-items: center; justify-content: space-between;
     top: 0; right: 0; left: 0;
+    height: fit-content; max-height: 10rem;
     padding: .5rem 5% 0;
     z-index: 99;
 }
@@ -69,9 +70,17 @@ h3,
 }
 #short-name {
     display: none;
+    font-size: 3.5rem;
 }
 #full-name {
     text-align: center;
+}
+.navbar {
+    position: absolute;
+    top: 100%;right: -100%;
+    width: 20rem; height: 65vh;
+    background-color: #fff;
+    border-bottom-left-radius: 1rem;
 }
 .navbar a {
     font-size: 2rem; font-weight: 500;
@@ -91,40 +100,42 @@ h3,
     border-radius: 1rem;
 }
 .icon #menu {
-    display: none;
+    display: inline-block;
+}
+    /* navbar appears onclick */
+.navbar.active {
+    right: 0;
 }
 
 /* hero */
 .hero {
-    display: flex;
-    align-items: center;
-    min-height: 90vh;
+    display: inline-block;
+    width: 100%; height: 90vh;
+    text-align: center;
     background: url(/Images/tsb_banner.png) var(--blue);
     background-position: center center; background-size: cover;
-    text-align: center; 
+    padding: 10.7rem 3% 0;
 }
-.hero_content {
-    margin: 10rem 2rem;
+.hero h2 {
+    margin-bottom: 3rem;
+    font-size: 4.5rem; font-weight: bold;
 }
-.hero_content h2 {
-    margin-bottom: 7rem;
-    font-size: 5rem; font-weight: bold;
+.hero p {
+    margin-bottom: 2.5rem; line-height: 2.5;
+    font-size: 1.7rem; font-weight: 500;
 }
-.hero_content p {
-    font-size: 2rem; font-weight: 500;
-    line-height: 3;
-}
-.hero_content button {
-    width: 30%; height: 5rem;
+.hero button {
+    width: 30%; height: fit-content;
     border-radius: 1rem;
-    margin-top: 5rem; cursor: pointer;
+    cursor: pointer;
     background-color: var(--orange);
 }
-.hero_content a {
+.hero a {
+    padding: .5rem;
     font-size: 1.6rem; font-weight: bold;
     color: var(--pink);
 }
-.hero_content button:hover {
+.hero button:hover {
     box-shadow: .5rem .5rem 1rem var(--pink);
     scale: 1.1;
 }
@@ -141,7 +152,7 @@ h3,
         linear-gradient(135deg,transparent 34%, #31acf1 35%, #31acf1 40%, transparent 41%, transparent 59%, #31acf1  60%, #31acf1 65%, transparent 66%);
         background-size: 3em 3em;
         background-color:  #ebe6e6;
-        opacity: 1
+        opacity: 1;
     /* width: 50%; */
     padding: 2rem;
     border-radius: 5rem;
@@ -171,54 +182,43 @@ h3,
         display: none;
     }
 }
-/* tablet */
-@media screen and (max-width:768px){
-    
-    /* menu icon appearance */
-    .icon #menu {
-        display: inline-block;
-    }
-    /* navbar relocated off-screen */
-    .navbar {
-        position: absolute;
-        top: 100%;right: -100%;
-        width: 25rem; height: 65vh;
-        background-color: var(--blue);
-    }
-    /* navbar appears onclick */
-    .navbar.active {
-        right: 0;
-    }
-    /* navbar link display */
-    .navbar a {
-        display: block;
-        font-size: 2rem;
-        color: var(--black);
-        margin: 1.5rem;
-    }
-}
-/* large tablet */
-@media screen and (min-width:768px){
-    /* logo resize */
+/*tablet and up*/
+@media (min-width:768px){
+        /* logo resize */
     .logoContent img {
         height: 10rem;
     }
+        /* head space */
     .header {
         padding: .2rem 1% 0;
     }
-    .hero_content button {
+        /* menu icon appearance */
+    .icon #menu {
+        display: none;
+    }
+        /* navbar link display */
+    .navbar {
+        all: unset;
+        width: fit-content;
+    }
+        /* hero content */
+    .hero h2 {
+        font-size: 5rem;
+    }
+    .hero p {
+        margin-bottom: 3.5rem; line-height: 2;
+        font-size: 2.4rem;
+        /* in-progression */
+    }
+    .hero button {
         height: 7rem;
     }
-    .hero_content a {
+    .hero a {
         font-size: 3rem;
     }
-    .hero_content p {
+    .hero p {
         max-width: 97.5rem;
     }
 }
 
-/* now: */
-/*  */
-
-/* later: */
-/*  */
+/* work on button then product and about us */
