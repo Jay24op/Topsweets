@@ -24,9 +24,12 @@ html {
     background:var(--brown);
     overflow-x: hidden;
 }
+h1,h2,h3,p{
+    color: var(--black);
+}
 h1 {
     font-size: 3rem; font-weight: 700; 
-    font-style: italic; color: var(--black);
+    font-style: italic;
     line-height: 1.15;
 }
 h2 {
@@ -38,11 +41,19 @@ h3 {
 P {
     font-size: 1.4rem; font-weight: 300;
 }
-
+/* displays */
+.grid {
+    display: grid;
+}
+/* block */
+.block h2 {
+     text-align: center; /*margin:0 0 1rem; */
+}
 /* centering */
-h3,
-.heading,
-.hero,
+h3 ,
+.block,
+.homecontent,
+.hero_logo,
 .card .card_img {
     display: flex;
     align-items: center; justify-content: center;
@@ -54,8 +65,8 @@ h3,
     display: flex;  position: fixed;
     align-items: center; justify-content: space-between;
     top: 0; right: 0; left: 0;
-    height: fit-content; max-height: 10rem;
-    padding: .5rem 5% 0;
+    height: 8.5rem;
+    padding: 0 5%;
     z-index: 99;
 }
 .logoContent {
@@ -102,6 +113,9 @@ h3,
 .icon #menu {
     display: inline-block;
 }
+.empty {
+    height: 8.3rem;
+}
     /* navbar appears onclick */
 .navbar.active {
     right: 0;
@@ -109,36 +123,42 @@ h3,
 
 /* hero */
 .hero {
-    display: inline-block;
-    width: 100%; height: 90vh;
-    text-align: center;
-    background: url(/Images/tsb_banner.png) var(--blue);
+    height: 80vh; max-height: fit-content;
+    background: url(/Images/tsb_banner.png) #8bd0ff no-repeat;
     background-position: center center; background-size: cover;
-    padding: 10.7rem 3% 0;
 }
-.hero h2 {
-    margin-bottom: 3rem;
-    font-size: 4.5rem; font-weight: bold;
+.hero .grid{
+    grid-template-rows: repeat(2,1fr);
 }
-.hero p {
-    margin-bottom: 2.5rem; line-height: 2.5;
-    font-size: 1.7rem; font-weight: 500;
+.herocontent {
+    text-align: center;
 }
-.hero button {
-    width: 30%; height: fit-content;
-    border-radius: 1rem;
+.herocontent h2 {
+    font-size: 4rem; font-weight: bolder;
+    line-height: 7rem;
+    text-shadow: var(--box-shadow);
+}
+.herocontent p {
+    font-size: 1.5rem; line-height: 2;
+    margin-bottom: 1rem; font-weight: 500;  /*line-height: 2.2; margin-bottom: 3rem;*/
+}
+.herocontent button {
+    font-size: 1.8rem; font-weight: 600;
+    background-color: var(--orange); color: var(--pink);
+    border-radius: 3rem;
+    padding: 2rem 5vw; margin: 1rem 0;
     cursor: pointer;
-    background-color: var(--orange);
+    text-transform: uppercase;
 }
-.hero a {
-    padding: .5rem;
-    font-size: 1.6rem; font-weight: bold;
-    color: var(--pink);
+.herocontent button:hover {
+    box-shadow: .5rem .7rem 1rem var(--pink);
+    font-size: 2.2rem;
 }
-.hero button:hover {
-    box-shadow: .5rem .5rem 1rem var(--pink);
-    scale: 1.1;
-}
+
+.hero_logo img {
+    max-width: 100%;
+    max-height: 100%;
+  }
 /* product */
 .product {
     
@@ -190,7 +210,8 @@ h3,
     }
         /* head space */
     .header {
-        padding: .2rem 1% 0;
+        padding: .5rem 1% 0;
+        height: 10rem;
     }
         /* menu icon appearance */
     .icon #menu {
@@ -201,24 +222,28 @@ h3,
         all: unset;
         width: fit-content;
     }
+    .empty {
+        height: 10rem;
+    }
         /* hero content */
-    .hero h2 {
-        font-size: 5rem;
+    .herocontent h2 {
+        font-size: 7rem;
+        padding-top: 3rem;
     }
-    .hero p {
+    .herocontent p {
         margin-bottom: 3.5rem; line-height: 2;
-        font-size: 2.4rem;
-        /* in-progression */
+        font-size: 2.4rem; max-width: 97.5rem;
     }
-    .hero button {
-        height: 7rem;
+    .hero .grid {
+        grid-template-rows: none;
+        grid-template-columns: repeat(2, 1fr);
     }
-    .hero a {
-        font-size: 3rem;
-    }
-    .hero p {
-        max-width: 97.5rem;
+
+}
+@media (min-width:1024px){
+    .hero .grid {
+        padding: 20rem;
+        column-gap: 5rem;
     }
 }
-
 /* work on button then product and about us */
