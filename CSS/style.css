@@ -51,7 +51,6 @@ P {
 }
 /* centering */
 h3 ,
-.block,
 .homecontent,
 .hero_logo,
 .card .card_img {
@@ -113,9 +112,6 @@ h3 ,
 .icon #menu {
     display: inline-block;
 }
-.empty {
-    height: 8.3rem;
-}
     /* navbar appears onclick */
 .navbar.active {
     right: 0;
@@ -123,30 +119,36 @@ h3 ,
 
 /* hero */
 .hero {
-    height: 80vh; max-height: fit-content;
+    /* margin-top: 8.5rem; */
+    height: 90vh; max-height: fit-content;
     background: url(/Images/tsb_banner.png) #8bd0ff no-repeat;
     background-position: center center; background-size: cover;
 }
-.hero .grid{
-    grid-template-rows: repeat(2,1fr);
+.hero .layout{
+    justify-content: center;
+    grid-template-rows: 12vh 30vh 40vh;
+    grid-template-columns: 90vw;
 }
 .herocontent {
+    grid-area: 3/auto/4;
     text-align: center;
+    padding-bottom: 4rem;
 }
 .herocontent h2 {
     font-size: 4rem; font-weight: bolder;
-    line-height: 7rem;
+    line-height: 5rem;
     text-shadow: var(--box-shadow);
 }
 .herocontent p {
-    font-size: 1.5rem; line-height: 2;
+    font-size: 2rem; line-height: 2; font-weight: bold;
+    text-shadow: var(--box-shadow);
     margin-bottom: 1rem; font-weight: 500;  /*line-height: 2.2; margin-bottom: 3rem;*/
 }
 .herocontent button {
     font-size: 1.8rem; font-weight: 600;
     background-color: var(--orange); color: var(--pink);
     border-radius: 3rem;
-    padding: 2rem 5vw; margin: 1rem 0;
+    padding: 2rem 5vw; margin: .7rem 0;
     cursor: pointer;
     text-transform: uppercase;
 }
@@ -154,7 +156,9 @@ h3 ,
     box-shadow: .5rem .7rem 1rem var(--pink);
     font-size: 2.2rem;
 }
-
+.hero_logo {
+    grid-area: 2/auto/3;
+}
 .hero_logo img {
     max-width: 100%;
     max-height: 100%;
@@ -193,6 +197,13 @@ h3 ,
 
 /* media queries*/
 
+/* large phones/small tablets*/
+@media screen and (min-width:450px) {
+    .hero .layout{
+        grid-template-rows: 13vh 30vh 40vh;
+        gap: 2rem;
+    }
+}
 /* full-name appearance */
 @media screen and (max-width:700px){
     #short-name {
@@ -222,10 +233,10 @@ h3 ,
         all: unset;
         width: fit-content;
     }
-    .empty {
-        height: 10rem;
-    }
         /* hero content */
+    .hero {
+        margin-top: 10rem;
+    }
     .herocontent h2 {
         font-size: 7rem;
         padding-top: 3rem;
@@ -235,7 +246,6 @@ h3 ,
         font-size: 2.4rem; max-width: 97.5rem;
     }
     .hero .grid {
-        grid-template-rows: none;
         grid-template-columns: repeat(2, 1fr);
     }
 
