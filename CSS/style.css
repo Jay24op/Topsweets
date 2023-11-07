@@ -7,7 +7,7 @@
     --pink: #de256b;
     --brown: #cd957b;
     --white: #ebe6e6;
-    --box-shadow: 0px 4px 4px rgba(0,0,0,0.25);
+    --box-shadow: 0px 4px 4px rgba(0,0,0,0.5);
 }
 
 *, *::before, *::after {
@@ -28,18 +28,18 @@ h1,h2,h3,p{
     color: var(--black);
 }
 h1 {
-    font-size: 3rem; font-weight: 700; 
+    font-size: 4rem; font-weight: 700; 
     font-style: italic;
     line-height: 1.15;
 }
 h2 {
-    font-size: 2.5rem; font-weight: 600;
+    font-size: 3rem; font-weight: 600;
 }
 h3 {
-    font-size: 2rem; font-weight: 550;
+    font-size: 2.5rem; font-weight: 550;
 }
 P {
-    font-size: 1.4rem; font-weight: 300;
+    font-size: 2rem; font-weight: 400;
 }
 /* displays */
 .grid {
@@ -53,6 +53,7 @@ P {
 h3 ,
 .homecontent,
 .hero_logo,
+.product,
 .card .card_img {
     display: flex;
     align-items: center; justify-content: center;
@@ -123,7 +124,7 @@ h3 ,
 
 /* hero */
 .hero {
-    height: 90vh; max-height: fit-content;
+    min-height: 90vh; max-height: fit-content;
     background: url(/Images/tsb_banner.png) #8bd0ff no-repeat;
     background-position: center center; background-size: cover;
 }
@@ -131,6 +132,7 @@ h3 ,
     justify-content: center;
     grid-template-rows: 12vh 30vh 40vh;
     grid-template-columns: 90vw;
+    gap: 1rem;
 }
 .herocontent {
     grid-area: 3/auto/4;
@@ -143,7 +145,7 @@ h3 ,
     text-shadow: var(--box-shadow);
 }
 .herocontent p {
-    font-size: 2rem; line-height: 2; font-weight: 600; word-spacing: .5rem;
+    line-height: 2; font-weight: 600; word-spacing: .5rem;
     text-shadow: 0.15rem .15rem .1rem var(--black); letter-spacing: .3rem;
     margin-bottom: 1rem; font-weight: 500; color: var(--pink);
 }
@@ -168,47 +170,68 @@ h3 ,
   }
 /* product */
 .product {
-    
     padding: 2.5rem 2rem;
+    background: linear-gradient(65deg, rgba(255,255,255,1) 0%, rgba(255,201,99,1) 50%, rgba(255,255,255,1) 100%);
 }
-.product .heading{
+.row {
+    display: flex; align-items: center; justify-content: space-between;
+}
+.product h2{
     padding-bottom: 3rem;
 }
 .product .card {
-    background: linear-gradient(45deg,transparent 34%, #31acf1 35%, #31acf1 40%, transparent 41%, transparent 59%, #31acf1  60%, #31acf1 65%, transparent 66%),
-        linear-gradient(135deg,transparent 34%, #31acf1 35%, #31acf1 40%, transparent 41%, transparent 59%, #31acf1  60%, #31acf1 65%, transparent 66%);
-        background-size: 3em 3em;
-        background-color:  #ebe6e6;
-        opacity: 1;
-    /* width: 50%; */
-    padding: 2rem;
+    flex: 1 1 21rem; flex-wrap: wrap;
+    margin: 1rem 2rem; padding: 1rem 2rem;
+    background: linear-gradient(65deg, rgba(244,170,226,1) 0%, rgba(245,191,105,0.95) 30%, rgba(109,223,246,1) 50%, rgba(245,191,105,1) 70%, rgba(244,170,226,1) 100%);
     border-radius: 5rem;
+    border: .5rem double #fff;
+    box-shadow: var(--box-shadow) inset;
+    align-self: normal;
 }
-.card h2 {
-    padding-bottom: 1rem;
+.card h3 {
+    color: var(--white);
+    text-shadow: .4rem .3rem .1rem var(--black);
+}
+.card h3:hover {
+    scale: 1.4;
 }
 .card_img {
-    padding: 2rem;
+    padding: 1.5rem;
+    /* max-height: 45rem; max-width: 45rem; */
 }
 .card_img img {
     width: 100%;
+    border-radius: 3rem;
 }
 .card p {
-    line-height: 1.25;
-    text-align: center; 
+    line-height: 1.1;
+    text-align: center;
+}
+.card a {
+    margin: 1.5rem auto;
+    background-color: var(--white); color: var(--pink);
+    border-radius: 3rem;
+    text-align: center;
+    padding: 1rem 2rem;
 }
 
 /* media queries*/
 
 /* large phones/small tablets*/
-@media screen and (min-width:420px) {
+@media screen and (min-width:425px) {
     .hero .layout{
         grid-template-rows: 13vh 30vh 40vh;
-        gap: 3rem;
+        gap: 7rem;
     }
     .hero_logo {
         scale: 1.2;
     }
+    .card_img {
+        padding: 2.5rem;
+    }
+}
+@media screen and (min-width:600px) {
+    
 }
 /* full-name appearance */
 @media screen and (max-width:700px){
@@ -263,9 +286,10 @@ h3 ,
     }
 
 }
+/* larger moniters */
 @media (min-width:1024px){
     .hero_logo {
         scale: 1.1;
     }
 }
-/* work on button then product and about us */
+/* work product and about us */
