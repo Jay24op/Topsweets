@@ -1,12 +1,17 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,400;1,700&display=swap');
-
+/* contrasting failed */
 :root {
-    --orange: #f88c5c;
-    --blue: #31acf1;
-    --black: #3d3939;
-    --pink: #de256b;
-    --brown: #cd957b;
-    --white: #ebe6e6;
+    --nav: #FCFFFA;
+    --block-primary: #99ccff;
+    --block-secondary: #ff99cc;
+    --block-accent: #ffcc99;
+    --orange: #f88c5c;/*blue pink white 4/5*/
+    --blue: #31acf1;/*pink orange brown white 4/5*/
+    --black: #3d3939;/*pink brown(only s) 2/5*/
+    --pink: #de256b;/*orange blue black brown white(only s) 5/5*/
+    --purple: #8153E9;
+    --brown: #cd957b;/*orange blue black(only s) pink white 5/5*/
+    --white: #ebe6e6;/*orange blue pink(only s) brown 4/5*/
     --box-shadow: 0px 4px 4px rgba(0,0,0,0.5);
 }
 
@@ -53,15 +58,14 @@ P {
 h3 ,
 .homecontent,
 .hero_logo,
-.product,
-.card .card_img {
+.product .row{
     display: flex;
     align-items: center; justify-content: center;
 }
 
 /* navigation */
 .header {
-    background-color: var(--white);
+    background-color: var(--nav);
     display: flex;  position: fixed;
     align-items: center; justify-content: space-between;
     top: 0; right: 0; left: 0;
@@ -125,7 +129,7 @@ h3 ,
 /* hero */
 .hero {
     min-height: 90vh; max-height: fit-content;
-    background: url(/Images/tsb_banner.png) #8bd0ff no-repeat;
+    background: url(/Images/tsb_banner.png) var(--block-primary) no-repeat;
     background-position: center center; background-size: cover;
 }
 .hero .layout{
@@ -144,9 +148,12 @@ h3 ,
     line-height: 5rem;
     text-shadow: var(--box-shadow);
 }
+.title-highlight {
+    color: var(--purple);
+}
 .herocontent p {
     line-height: 2; font-weight: 600; word-spacing: .5rem;
-    text-shadow: 0.15rem .15rem .1rem var(--black); letter-spacing: .3rem;
+    text-shadow: 0.25rem .25rem .1rem var(--nav); letter-spacing: .3rem;
     margin-bottom: 1rem; font-weight: 500; color: var(--pink);
 }
 .herocontent button {
@@ -171,22 +178,21 @@ h3 ,
 /* product */
 .product {
     padding: 2.5rem 2rem;
-    background: linear-gradient(65deg, rgba(255,255,255,1) 0%, rgba(255,201,99,1) 50%, rgba(255,255,255,1) 100%);
+    background-color: var(--block-secondary);
 }
-.row {
-    display: flex; align-items: center; justify-content: space-between;
+.product .row {
+    display: flex; align-items: center; justify-content: center;
 }
 .product h2{
     padding-bottom: 3rem;
 }
 .product .card {
-    flex: 1 1 21rem; flex-wrap: wrap;
+    max-width: 50rem;
     margin: 1rem 2rem; padding: 1rem 2rem;
     background: linear-gradient(65deg, rgba(244,170,226,1) 0%, rgba(245,191,105,0.95) 30%, rgba(109,223,246,1) 50%, rgba(245,191,105,1) 70%, rgba(244,170,226,1) 100%);
     border-radius: 5rem;
     border: .5rem double #fff;
     box-shadow: var(--box-shadow) inset;
-    align-self: normal;
 }
 .card h3 {
     color: var(--white);
@@ -284,7 +290,10 @@ h3 ,
         grid-area: 2/1/-1/2;
         align-self: center;
     }
-
+        /* product content */
+    .product .row{
+        justify-content: space-evenly;
+    }
 }
 /* larger moniters */
 @media (min-width:1024px){
