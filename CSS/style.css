@@ -58,7 +58,7 @@ P {
 h3 ,
 .homecontent,
 .hero_logo,
-.product .row{
+.product .card{
     display: flex;
     align-items: center; justify-content: center;
 }
@@ -177,18 +177,23 @@ h3 ,
   }
 /* product */
 .product {
-    padding: 2.5rem 2rem;
+    padding: 2.5rem .5rem 3rem;
     background-color: var(--block-secondary);
-}
-.product .row {
-    display: flex; align-items: center; justify-content: center;
 }
 .product h2{
     padding-bottom: 3rem;
 }
+.slide_container {
+     /* max-width: 1120px; width: 100%; */
+     padding: 4rem 0;
+}
+.product .slide-content {
+    margin: 0 5rem; overflow: hidden;
+    max-width: fit-content;
+}
 .product .card {
-    max-width: 50rem;
-    margin: 1rem 2rem; padding: 1rem 2rem;
+    max-width: 50rem; flex-direction: column;
+    padding: 1rem 2rem;
     background: linear-gradient(65deg, rgba(244,170,226,1) 0%, rgba(245,191,105,0.95) 30%, rgba(109,223,246,1) 50%, rgba(245,191,105,1) 70%, rgba(244,170,226,1) 100%);
     border-radius: 5rem;
     border: .5rem double #fff;
@@ -202,16 +207,11 @@ h3 ,
     scale: 1.4;
 }
 .card_img {
-    padding: 1.5rem;
-    /* max-height: 45rem; max-width: 45rem; */
+    padding: 1.5rem 2rem 1rem;
 }
 .card_img img {
-    width: 100%;
+    width: 100%; height: 100%;
     border-radius: 3rem;
-}
-.card p {
-    line-height: 1.1;
-    text-align: center;
 }
 .card a {
     margin: 1.5rem auto;
@@ -219,6 +219,11 @@ h3 ,
     border-radius: 3rem;
     text-align: center;
     padding: 1rem 2rem;
+}
+.card p {
+    padding: 1rem;
+    line-height: 1.1;
+    text-align: center;
 }
 
 /* media queries*/
@@ -233,11 +238,13 @@ h3 ,
         scale: 1.2;
     }
     .card_img {
-        padding: 2.5rem;
+        padding: 1.5rem 2.5rem;
     }
 }
 @media screen and (min-width:600px) {
-    
+    .product {
+        padding: 2.5rem 5rem 3rem;
+    }
 }
 /* full-name appearance */
 @media screen and (max-width:700px){
@@ -291,8 +298,8 @@ h3 ,
         align-self: center;
     }
         /* product content */
-    .product .row{
-        justify-content: space-evenly;
+    .product {
+        padding: 2.5rem .5rem 3rem;
     }
 }
 /* larger moniters */

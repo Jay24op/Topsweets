@@ -5,6 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- css -->
     <link rel="stylesheet" href="/CSS/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+    <!-- title -->
     <title>TopSweets_landingpage</title>
     <!-- js -->
     <script
@@ -63,33 +68,57 @@
     <!-- product section  -->
     <section class="block product" id="product">
       <h2>-Our products-</h2>
-      <div class="row">
-        <!-- card #1 -->
-        <div class="card">
-          <h3>cakes</h3>
-          <div class="card_img">
-            <img src="/Images/tsub_spookycake.jpg" alt="spookycake" />
+      <div class="swiper slide_container">
+        <div class="slide-content">
+          <div class="swiper-wrapper card_row">
+            <!-- card #1 -->
+            <div class="swiper-slide card">
+              <h3>cakes</h3>
+              <div class="card_img">
+                <img
+                  class="product_page"
+                  src="/Images/tsub_spookycake.jpg"
+                  alt="spookycake"
+                />
+              </div>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui
+                explicabo, optio exercitationem cupiditate culpa aliquid!
+              </p>
+            </div>
+            <!-- card #2 -->
+            <div class="swiper-slide card">
+              <h3>cakes</h3>
+              <div class="card_img">
+                <img src="/Images/tsub_spookycake.jpg" alt="spookycake" />
+              </div>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui
+                explicabo, optio exercitationem cupiditate culpa aliquid!
+              </p>
+            </div>
+            <!-- card #3 -->
+            <div class="swiper-slide card">
+              <h3>cakes</h3>
+              <div class="card_img">
+                <img src="/Images/tsub_spookycake.jpg" alt="spookycake" />
+              </div>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui
+                explicabo, optio exercitationem cupiditate culpa aliquid!
+              </p>
+            </div>
           </div>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui
-            explicabo, optio exercitationem cupiditate culpa aliquid!
-          </p>
         </div>
-        <!-- card #2 -->
-        <div class="card">
-          <h3>cakes</h3>
-          <div class="card_img">
-            <img src="/Images/tsub_spookycake.jpg" alt="spookycake" />
-          </div>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui
-            explicabo, optio exercitationem cupiditate culpa aliquid!
-          </p>
-        </div>
-        <!-- card #3 -->
+        <!-- pagination -->
+        <div class="swiper-pagination"></div>
+        <!-- nav buttons -->
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
       </div>
     </section>
 
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script src="/Js/script.js"></script>
   </body>
 </html>
