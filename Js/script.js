@@ -6,7 +6,7 @@ document.querySelector('#menu').onclick=() =>{
 //swiper
  const swiper = new Swiper('.slide-content', {
     slidesPerView: 1,
-    spaceBetween: 25,
+    spaceBetween: 30,
     loop: true,
     centerSlides:'true',
     autoplay: {
@@ -15,7 +15,7 @@ document.querySelector('#menu').onclick=() =>{
     },
     observer:'true',
     fade: 'true',
-    grabCursor: 'true',
+    // grabCursor: 'true',
     pagination: {
       el: '.swiper-pagination',
       clickable: true,
@@ -28,11 +28,10 @@ document.querySelector('#menu').onclick=() =>{
      breakpoints: {
          700: {
            slidesPerView: 2,
-           spaceBetween: 15,
          },
          1024: {
            slidesPerView: 3,
-           spaceBetween: 30,
+           spaceBetween: 20,
          },
        },
   });
