@@ -133,13 +133,14 @@ h3 ,
 }
 .hero .layout{
     justify-content: center;
-    grid-template-rows: 8rem 30rem 30rem;
+    grid-template-rows: 8rem 30rem 37rem;
     grid-template-columns: 1fr;
 }
 .herocontent {
     grid-area: 3/auto/-1;
     text-align: center;
-    margin: 1rem auto;
+    margin: .45rem auto;
+    overflow-y: hidden;
 }
 .herocontent h2 {
 
@@ -256,7 +257,7 @@ h3 ,
 /* large phones/small tablets*/
 @media screen and (min-width:425px) {
     .hero .layout{
-        gap: 2rem;
+        gap: .85rem;
     }
     .hero_logo {
         scale: 1.15;
@@ -268,10 +269,10 @@ h3 ,
 @media screen and (min-width:600px) {
     /* hero */
     .hero .herocontent p {
-        margin: 3.5rem;
+        margin: 3.5rem 3.5rem 1rem 3.5rem;
     }
     .product {
-        padding: 2.5rem 5rem 3rem;
+        padding: 2.5rem 5rem 5rem;
     }
 }
 /* full-name appearance */
@@ -315,11 +316,12 @@ h3 ,
     }
     .herocontent h2 {
         font-size: 7rem;
-        padding-top: 3rem;
-        line-height: 1.4;
+        padding-top: 1.5rem;
+        line-height: 1.1;
     }
     .herocontent p {
-        padding: 4rem 0; line-height: 2.2;
+        margin-bottom: 1rem;
+        line-height: 1.7;
         font-size: 2.4rem; max-width: 97.5rem;
     } 
     .hero_logo {
