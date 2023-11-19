@@ -52,10 +52,6 @@ P {
 .grid {
     display: grid;
 }
-/* block */
-.block h2 {
-     text-align: center; /*margin:0 0 1rem; */
-}
 /* centering */
 h3 ,
 .homecontent,
@@ -186,6 +182,7 @@ h3 ,
     background-color: var(--block-secondary);
 }
 .product h2{
+    text-align: center;
     padding-bottom: 3rem;
 }
 .slide_container {
@@ -243,6 +240,15 @@ h3 ,
     padding: 1rem;
     line-height: 1.1;
     text-align: center;
+}
+
+/* about */
+.about {
+    background: var(--block-accent);
+}
+.about h2 {
+    text-align: center;
+    padding-bottom: 3rem;
 }
 
 /* media queries*/
@@ -329,6 +335,9 @@ h3 ,
 }
 /* larger moniters */
 @media (min-width:1024px){
+    .product .card .card_img {
+        scale: .9;
+    }
 }
 /* border
 .border {
