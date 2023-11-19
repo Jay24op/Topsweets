@@ -197,7 +197,7 @@ h3 ,
     max-width: fit-content;
 }
 .product .card {
-    max-width: 50rem; flex-direction: column;
+    /* max-width: 50rem;*/ flex-direction: column;
     padding: 1rem 2rem;
     background: linear-gradient(65deg, rgba(244,170,226,1) 0%, rgba(245,191,105,0.95) 30%, rgba(109,223,246,1) 50%, rgba(245,191,105,1) 70%, rgba(244,170,226,1) 100%);
     border-radius: 5rem;
