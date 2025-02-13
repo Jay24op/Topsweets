@@ -11,16 +11,14 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
-        # with:
-        #   sparse-checkout: |
-        #     dist
       - name: Create Node Environment
-        uses: actions/setup-node@v2
+        uses: actions/setup-node@v3
         with:
-          node-version: 10.x
+          node-version: 18.x
+          cache: 'npm'
       - name: Install Packages and Build Application
-        run: | #npm install
-          npm install -g @vue/cli
+        run: | 
+          npm install
           npm run build
       - name: Deploy
         uses: s0/git-publish-subdir-action@develop
