@@ -1,4 +1,4 @@
-name: deploy to hostinger
+name: Deployable Application Build
 on:
   push:
     branches:
@@ -6,7 +6,7 @@ on:
 
 jobs:
   deploy:
-    name: Deploy Application
+    name: Deploy Application Build
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
@@ -22,11 +22,17 @@ jobs:
         run: | 
           npm install
           npm run build
+      
+      - name: Checkout production branch and Fetch lastest changes
+        run: |
+          git fetch origin production
+          git checkout production
+          git pull origin production --rebase
 
       - name: Deploy
-        uses: s0/git-publish-subdir-action@develop
+        uses: s0/git-publish-subdir-action@production
         env:
           REPO: self
-          BRANCH: develop
+          BRANCH: production
           FOLDER: dist
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
