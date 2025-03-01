@@ -23,16 +23,6 @@ jobs:
           npm install
           npm run build
 
-      - name: Checkout production branch and Fetch lastest changes
-        run: |
-          # Stash any unstaged changes before pulling
-          git stash -u
-          git fetch origin production
-          git checkout production
-          git pull --rebase origin production
-          # Apply stashed changes if any
-          git stash pop || true  # '|| true' to prevent error if there's no stash
-
       - name: Deploy
         uses: s0/git-publish-subdir-action@develop
         env:

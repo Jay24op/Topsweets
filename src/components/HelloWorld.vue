@@ -21,6 +21,7 @@ const count = ref(0)
   </div>
 
   <p>Exciting new updates are coming!!!</p>
+  <p>GET READYYY!!!</p>
 
   <p>
     Check out
