@@ -11,23 +11,27 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
-        
+
       - name: Create Node Environment
         uses: actions/setup-node@v3
         with:
           node-version: 18.x
-          cache: 'npm'
+          cache: "npm"
 
       - name: Install Packages and Build Application
-        run: | 
+        run: |
           npm install
           npm run build
-      
+
       - name: Checkout production branch and Fetch lastest changes
         run: |
+          # Stash any unstaged changes before pulling
+          git stash -u
           git fetch origin production
           git checkout production
-          git pull origin production --rebase
+          git pull --rebase origin production
+          # Apply stashed changes if any
+          git stash pop || true  # '|| true' to prevent error if there's no stash
 
       - name: Deploy
         uses: s0/git-publish-subdir-action@develop
