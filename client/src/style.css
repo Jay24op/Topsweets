@@ -15,6 +15,8 @@
     --brown: #cd957b;/*orange blue black(only s) pink white 5/5*/
     --white: #ebe6e6;/*orange blue pink(only s) brown 4/5*/
     --box-shadow: 0px 4px 4px rgba(0,0,0,0.5);
+
+    --nav-height: 8.5rem;
 }
 
 *, *::before, *::after {
@@ -60,69 +62,6 @@ h3 ,
 .card_img .img_content{
     display: flex;
     align-items: center; justify-content: center;
-}
-
-/* navigation */
-.header {
-    background-color: var(--nav);
-    display: flex;  position: fixed;
-    align-items: center; justify-content: space-between;
-    top: 0; right: 0; left: 0;
-    height: 8.5rem;
-    padding: 0 5%;
-    z-index: 99;
-}
-.logoContent {
-    cursor: pointer;
-    transition: transform .5s;
-}
-.logoContent img, .icon svg {
-    height: 7.5rem;
-}
-.logoContent:hover {
-    transform: scale(1.05)
-}
-#short-name {
-    display: none;
-    font-size: 3.5rem;
-    color: var(--pink);
-    text-shadow: .05rem .05rem .4rem var(--blue);    
-}
-#full-name {
-    text-align: center;
-    color: var(--pink);
-    text-shadow: .05rem .05rem .4rem var(--blue);
-}
-.navbar {
-    position: absolute;
-    top: 100%;right: -100%;
-    width: 20rem; height: 65vh;
-    background-color: #fff;
-    border-bottom-left-radius: 1rem;
-}
-.navbar a {
-    font-size: 2rem; font-weight: 500;
-    color: var(--black); margin-right: 1rem;
-}
-.navbar a:hover {
-    border-bottom: .25rem solid var(--brown);
-}
-.icon svg {
-    fill: var(--black); cursor: pointer;
-    width: 5.5rem;
-    padding: .5rem;
-    transition: all .15s;
-}
-.icon svg:hover {
-    border: 2px solid var(--blue);
-    border-radius: 1rem;
-}
-.icon #menu {
-    display: inline-block;
-}
-    /* navbar appears onclick */
-.navbar.active {
-    right: 0;
 }
 
 /* hero */
