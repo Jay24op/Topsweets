@@ -17,8 +17,9 @@ jobs:
         with:
           node-version: 18.x
           # cache: "npm"
-
+          
       - name: Install Packages and Build Application
+        working-directory: client
         run: |
           npm install
           npm run build
