@@ -1,0 +1,13 @@
+<!-- check if Apache mod_rewrite module is enabled which allows URL rewriting for Vue history mode -->
+<IfModule mod_rewrite.c>
+  <!-- turns on the URL rewriting engine for following rewriting -->
+  RewriteEngine On
+  <!-- defines the base URL path for rewriting -->
+  RewriteBase /
+  <!--  checks if the requested URL points to an actual file -->
+  RewriteCond %{REQUEST_FILENAME} !-f
+  <!--  checks if the requested URL points to an actual directory -->
+  RewriteCond %{REQUEST_FILENAME} !-d
+  <!-- if the requested URL point doesnt exist, redirect to index.html [L] for last rule to be processed -->
+  RewriteRule . /index.html [L]
+</IfModule>
