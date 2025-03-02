@@ -6,9 +6,9 @@ export default defineConfig({
   // base: process.env.NODE_ENV === "production" ? "/" : "/Topsweets/", //tsub.jaytech.pro Topsweets
   base: "/", // subdomain path
   plugins: [vue()],
-  resolve: {
-    alias: {
-      "@": fileURLToPath(new URL("./src", import.meta.url)),
-    },
-  },
+  // resolve: {
+  //   alias: {
+  //     "@": fileURLToPath(new URL("./src", import.meta.url)),
+  //   },
+  // },
 });
