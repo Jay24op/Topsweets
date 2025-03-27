@@ -16,7 +16,7 @@ const count = ref(0);
     <button type="button" @click="count++">count is {{ count }}</button>
   </div>
 
-  <p>Exciting new updates are coming!!!</p>
+  <p class="bg-blue-50 font-bold read-the-docs">Exciting new updates are coming!!!</p>
   <p>GET READYYY!!!</p>
 
   <p>routing in progress!!!</p>

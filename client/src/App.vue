@@ -3,7 +3,6 @@
   <main>
     <router-view />
   </main>
-  <!-- <HelloWorld msg="Frontend" /> -->
 </template>
 
 <script>
@@ -13,9 +12,3 @@ export default {
   components: { Navagation, HelloWorld },
 };
 </script>
-
-<style scoped>
-main {
-  margin-top: var(--nav-height);
-}
-</style>
