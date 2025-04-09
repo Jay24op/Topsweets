@@ -25,9 +25,25 @@
   main {
     @apply mt-[var(--spacing-nav)];
   }
+
+  h1, h2, h3, h4 {
+    @apply font-bold
+  }
   
   h1 {
-    @apply font-bold text-6xl cursor-pointer;
+    @apply text-[4rem] cursor-pointer;
+  }
+
+  h2 {
+    @apply text-[3.5rem]
+  }
+
+  h3 {
+    @apply text-[3rem]
+  }
+
+  h4 {
+    @apply text-[2.25rem]
   }
 }
 
@@ -50,6 +66,34 @@
   
   .nav-full > a {
     @apply inline-block w-30 not-last:mr-4 last:ml-4 border-blue hover:border-b-2;
+  }
+
+  .hero-section {
+    @apply bg-blue h-200 pt-18 bg-[url('./assets/tsb_banner.png')] bg-no-repeat bg-center bg-cover;
+  }
+
+  .hero-wrapper {
+    @apply flex justify-evenly;
+  }
+
+  .hero-content {
+    @apply flex flex-col justify-between max-w-[40%] items-center;
+  }
+
+  .hero-message {
+    @apply bg-pink/80  rounded-[3rem] py-3;
+  }
+
+  .hero-message > h4{
+    @apply leading-relaxed text-balance text-center;
+  }
+  
+  .pre-order-form {
+    @apply text-blue px-16 py-8
+  }
+  /* change to .pre-order-form > fieldset > label */
+  .pre-order-form > label{
+    @apply text-pink
   }
 }
 
